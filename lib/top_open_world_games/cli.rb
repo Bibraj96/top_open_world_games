@@ -9,8 +9,6 @@ class TopOpenWorldGames::CLI
   end
   
   def get_games
-    TopOpenWorldGames::Game.new("Loz BOTW")
-    TopOpenWorldGames::Game.new("Blood and Wine")
     @games = TopOpenWorldGames::Game.all
   end
   

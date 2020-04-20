@@ -8,6 +8,9 @@ class TopOpenWorldGames::Game
   end
   
   def self.all
+    if @@all.empty?
+      TopOpenWorldGames::Scraper.scrape_games
+    end
     @@all
   end
   
