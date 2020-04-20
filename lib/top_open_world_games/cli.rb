@@ -9,13 +9,15 @@ class TopOpenWorldGames::CLI
   end
   
   def get_games
-    @games = ["LoZ BOTW", "Blood and Wine", "The Witcher 3", "Yakuza 0", "Fallout 2"]
+    TopOpenWorldGames::Game.new("Loz BOTW")
+    TopOpenWorldGames::Game.new("Blood and Wine")
+    @games = TopOpenWorldGames::Game.all
   end
   
   def list_games
     puts "Select a game (1-5) to see more information!"
     @games.each.with_index(1) do |game, index|
-      puts "#{index}. #{game}"
+      puts "#{index}. #{game.name}"
     end
   end
   
@@ -32,7 +34,7 @@ class TopOpenWorldGames::CLI
   
   def display_info(selected_game)
     game = @games[selected_game - 1]
-    puts "Here is more information about #{game}"
+    puts "Here is more information about #{game.name}"
   end
 end
 
