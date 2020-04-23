@@ -1,6 +1,6 @@
 class TopOpenWorldGames::CLI
   def call
-    puts "\nWelcome! Here are Glitchwave's top 5 open world video games of all time!\n"
+    puts "\nWelcome! Here are Glitchwave's top 40 open world video games of all time!\n"
     get_games
     list_games
     user_game_selection
@@ -11,7 +11,7 @@ class TopOpenWorldGames::CLI
   end
   
   def list_games
-    puts "\nSelect a game (1-5) to see more information!\n"
+    puts "\nSelect a game (1-40) to see its rating!\n"
     @games.each.with_index(1) do |game, index|
       puts "#{index}. #{game.name}"
     end
@@ -30,7 +30,7 @@ class TopOpenWorldGames::CLI
   
   def display_info(selected_game)
     game = @games[selected_game - 1]
-    puts "Here is more information about #{game.name}"
+    puts "Here is #{game.name}'s rating!"
   end
 end
 
