@@ -12,6 +12,7 @@ class TopOpenWorldGames::CLI
   
   def list_games
     puts "\nSelect a game (1-40) to see its rating!\n"
+    puts "***************************************"
     @games.each.with_index(1) do |game, index|
       puts "#{index}. #{game.name}"
     end
@@ -30,7 +31,8 @@ class TopOpenWorldGames::CLI
   
   def display_info(selected_game)
     game = @games[selected_game - 1]
-    puts "#{game.rating}"
+    puts "\n#{game.name} was released in #{game.release_year}.\n"
+    puts "\nOut of #{game.num_ratings} total ratings, it received a #{game.rating}/5!\n"
   end
 end
 
