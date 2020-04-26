@@ -1,9 +1,14 @@
 class TopOpenWorldGames::CLI
   def call
     puts "\nWelcome! Here are Glitchwave's top 40 open world video games of all time!\n"
-    get_games
-    list_games
-    user_game_selection
+    @input = ""
+    until @input == "exit"
+      get_games
+      list_games
+      user_game_selection
+      continue
+    end
+    goodbye
   end
   
   def get_games
@@ -11,7 +16,7 @@ class TopOpenWorldGames::CLI
   end
   
   def list_games
-    puts "\nSelect a game (1-40) to see its rating!\n"
+    puts "\nSelect a game (1-40) to see its rating and release year!\n"
     puts "***************************************"
     @games.each.with_index(1) do |game, index|
       puts "#{index}. #{game.name}"
@@ -31,8 +36,20 @@ class TopOpenWorldGames::CLI
   
   def display_info(selected_game)
     game = @games[selected_game - 1]
-    puts "\n#{game.name} was released in #{game.release_year}.\n"
-    puts "\nOut of #{game.num_ratings} total ratings, it received a #{game.rating}/5!\n"
+    puts "***************************************"
+    puts "#{game.name} was released in #{game.release_year}."
+    puts "Out of #{game.num_ratings} total ratings, it received a #{game.rating}/5!"
+  end
+  
+  def continue
+    puts "***************************************"
+    puts "To choose another game, type any key."
+    puts "To exit, type 'exit'"
+    @input = gets.strip
+  end 
+  
+  def goodbye
+    puts "Have fun exploring your open world game!"
   end
 end
 
