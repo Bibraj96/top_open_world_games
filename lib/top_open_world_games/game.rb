@@ -1,9 +1,10 @@
 class TopOpenWorldGames::Game
-  attr_accessor :name
+  attr_accessor :name, :rating
   @@all = []
   
-  def initialize(name)
+  def initialize(name, rating)
     @name = name
+    @rating = rating
     save
   end
   

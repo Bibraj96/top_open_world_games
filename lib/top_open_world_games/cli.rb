@@ -30,7 +30,7 @@ class TopOpenWorldGames::CLI
   
   def display_info(selected_game)
     game = @games[selected_game - 1]
-    puts "Here is #{game.name}'s rating!"
+    puts "#{game.rating}"
   end
 end
 
