@@ -8,7 +8,7 @@ class TopOpenWorldGames::CLI
       user_game_selection
       continue
     end
-    goodbye
+    done
   end
   
   def get_games
@@ -43,12 +43,12 @@ class TopOpenWorldGames::CLI
   
   def continue
     puts "***************************************"
-    puts "To choose another game, type any key to display the top 40."
+    puts "To choose a game, type any key to display the top 40."
     puts "To exit, type 'exit'"
     @input = gets.strip
   end 
   
-  def goodbye
+  def done
     puts "Have fun exploring your open world game!"
   end
 end
