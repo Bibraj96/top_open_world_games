@@ -49,7 +49,7 @@ class TopOpenWorldGames::CLI
   end 
   
   def done
-    puts "Have fun exploring your open world game!".colorize(:color => :green, :background => :light_blue)
+    puts "Have fun exploring your open world game!".colorize(:green)
   end
 end
 
