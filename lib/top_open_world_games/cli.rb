@@ -1,6 +1,6 @@
 class TopOpenWorldGames::CLI
   def call
-    puts "\nWelcome! Here are Glitchwave's top 40 open world video games of all time!\n"
+    puts "\nWelcome! Here are Glitchwave's top 40 open world video games of all time!\n".colorize(:green)
     @input = ""
     until @input == "exit"
       get_games
@@ -16,10 +16,10 @@ class TopOpenWorldGames::CLI
   end
   
   def list_games
-    puts "\nSelect a game (1-40) to see its rating and release year!\n"
-    puts "***************************************"
+    puts "Select a game (1-40) to see its rating and release year!\n".colorize(:green)
+    puts "--------------------------------------------------------"
     @games.each.with_index(1) do |game, index|
-      puts "#{index}. #{game.name}"
+      puts "#{index}. #{game.name}".colorize(:light_blue)
     end
   end
   
@@ -36,20 +36,20 @@ class TopOpenWorldGames::CLI
   
   def display_info(selected_game)
     game = @games[selected_game - 1]
-    puts "***************************************"
-    puts "#{game.name} was released in #{game.release_year}."
-    puts "Out of #{game.num_ratings} total ratings, it received a #{game.rating}/5!"
+    puts "----------------------------------------------"
+    puts "#{game.name} was released in #{game.release_year}.".colorize(:green)
+    puts "Out of #{game.num_ratings} total ratings, it received a #{game.rating}/5!".colorize(:green)
   end
   
   def continue
-    puts "***************************************"
-    puts "To choose a game, type any key to display the top 40."
-    puts "To exit, type 'exit'"
+    puts "----------------------------------------------"
+    puts "To choose a game, type any key to display the top 40.".colorize(:light_blue)
+    puts "To exit, type 'exit'".colorize(:red)
     @input = gets.strip
   end 
   
   def done
-    puts "Have fun exploring your open world game!"
+    puts "Have fun exploring your open world game!".colorize(:color => :green, :background => :light_blue)
   end
 end
 

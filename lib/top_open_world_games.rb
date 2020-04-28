@@ -6,6 +6,7 @@ require_relative "./top_open_world_games/scraper"
 require 'pry'
 require 'nokogiri'
 require 'open-uri'
+require 'colorize'
 
 module TopOpenWorldGames
   class Error < StandardError; end
